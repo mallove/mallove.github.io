@@ -396,8 +396,7 @@
                 m = function(t, e) {
                     var n, r = {},
                         i = e || [];
-                    for (n = 0; n <
-                        i.length; n++) r[i[n]] = 1;
+                    for (n = 0; n < i.length; n++) r[i[n]] = 1;
                     return l(t, function(t, e) {
                         var n, i, o = [];
                         if (e) {
@@ -3513,10 +3512,8 @@
 }, function(t, e) {
     function n(t) {
         for (var e, n, r, i, o, s, u, c = "", d = 0; d <
-            t.length;) e = t.charCodeAt(d++), n = t.charCodeAt(d++), r = t.charCodeAt(d++), i = e >> 2, o = (3 & e) <
-            <
-            4 | n >> 4, s = (15 & n) <
-            <
+            t.length;) e = t.charCodeAt(d++), n = t.charCodeAt(d++), r = t.charCodeAt(d++), i = e >> 2, o = (3 & e) <<
+            4 | n >> 4, s = (15 & n) <<
             2 | r >> 6, u = 63 & r, isNaN(n) ? s = u = 64 : isNaN(r) && (u = 64), c += a.charAt(i) + a.charAt(o) + a.charAt(s) + a.charAt(u);
         return c
     }
@@ -3525,12 +3522,9 @@
         var e, n, r, i, o, s, u, c = "",
             d = 0;
         for (t = t.replace(/[^A-Za-z0-9\-_\=]/g, ""); d <
-            t.length;) i = a.indexOf(t.charAt(d++)), o = a.indexOf(t.charAt(d++)), s = a.indexOf(t.charAt(d++)), u = a.indexOf(t.charAt(d++)), e = i <
-            <
-            2 | o >> 4, n = (15 & o) <
-            <
-            4 | s >> 2, r = (3 & s) <
-            <
+            t.length;) i = a.indexOf(t.charAt(d++)), o = a.indexOf(t.charAt(d++)), s = a.indexOf(t.charAt(d++)), u = a.indexOf(t.charAt(d++)), e = i <<
+            2 | o >> 4, n = (15 & o) <<
+            4 | s >> 2, r = (3 & s) <<
             6 | u, c += String.fromCharCode(e), 64 != s && (c += String.fromCharCode(n)), 64 != u && (c += String.fromCharCode(r));
         return c
     }
@@ -3540,18 +3534,15 @@
             u = 0;
         if (/^[0-9a-fA-F]+$/.test(t))
             for (; u <
-                t.length;) e = parseInt(t.charAt(u++), 16), n = parseInt(t.charAt(u++), 16), r = parseInt(t.charAt(u++), 16), i = e <
-                <
-                2 | (isNaN(r) ? 3 & n : n >> 2), o = (3 & n) <
-                <
+                t.length;) e = parseInt(t.charAt(u++), 16), n = parseInt(t.charAt(u++), 16), r = parseInt(t.charAt(u++), 16), i = e <<
+                2 | (isNaN(r) ? 3 & n : n >> 2), o = (3 & n) <<
                 4 | r, s += a.charAt(i) + (isNaN(r) ? "" : a.charAt(o));
         return s
     }
 
     function o(t) {
         for (var e, n, r, i, o, s = "", u = 0; u <
-            t.length;) i = a.indexOf(t.charAt(u++)), o = u >= t.length ? NaN : a.indexOf(t.charAt(u++)), e = i >> 2, n = isNaN(o) ? 3 & i : (3 & i) <
-            <
+            t.length;) i = a.indexOf(t.charAt(u++)), o = u >= t.length ? NaN : a.indexOf(t.charAt(u++)), e = i >> 2, n = isNaN(o) ? 3 & i : (3 & i) <<
             2 | o >> 4, r = 15 & o, s += e.toString(16) + n.toString(16) + (isNaN(o) ? "" : r.toString(16));
         return s
     }
@@ -3601,8 +3592,7 @@
             a = navigator.plugins;
         try {
             if (t = a.length, t > 0)
-                for (var s = 0; s <
-                    Math.min(10, t); s++) 5 > s ? n += a[s].name + a[s].description : o += a[s].name + a[s].description
+                for (var s = 0; s < Math.min(10, t); s++) 5 > s ? n += a[s].name + a[s].description : o += a[s].name + a[s].description
         } catch (u) {}
         return e.substr(0, 2) + r(n, 16).substr(0, 3) + r(o, 16).substr(0, 3)
     }
@@ -3619,8 +3609,7 @@
     t.exports = function(t) {
         var e, n, r = t.split("?").pop().toLowerCase().split("&"),
             i = /^(?:q|search|bs|wd|p|kw|keyword|query|qry|querytext|text|searchcriteria|searchstring|searchtext|sp_q)=(.*)/i;
-        for (n = 0; n <
-            r.length; n++)
+        for (n = 0; n < r.length; n++)
             if (e = i.exec(r[n])) return e[1];
         return !1
     }

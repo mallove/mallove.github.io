@@ -1196,8 +1196,3 @@ if (!window['google']['loader']) {
         }
     });
 }
-var error = new Error("Module: 'feeds' not found!");
-error.toString = function() {
-    return this.message;
-}
-throw error;
